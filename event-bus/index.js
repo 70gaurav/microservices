@@ -16,23 +16,23 @@ app.post('/events' , async (req, res) => {
         console.error("Error sending event to http://localhost:4000/events:", error.message);
     }
 
-    // try {
-    //     await axios.post('http://localhost:4001/events', event);
-    // } catch (error) {
-    //     console.error("Error sending event to http://localhost:4001/events:", error.message);
-    // }
+    try {
+        await axios.post('http://localhost:4001/events', event);
+    } catch (error) {
+        console.error("Error sending event to http://localhost:4001/events:", error.message);
+    }
 
-    // try {
-    //     await axios.post('http://localhost:4002/events', event);
-    // } catch (error) {
-    //     console.error("Error sending event to http://localhost:4002/events:", error.message);
-    // }
+    try {
+        await axios.post('http://localhost:4002/events', event);
+    } catch (error) {
+        console.error("Error sending event to http://localhost:4002/events:", error.message);
+    }
 
-    // try {
-    //     await axios.post("http://localhost:4003/events", event);
-    // } catch (error) {
-    //     console.error("Error sending event to http://localhost:4003/events:", error.message);
-    // }
+    try {
+        await axios.post("http://localhost:4003/events", event);
+    } catch (error) {
+        console.error("Error sending event to http://localhost:4003/events:", error.message);
+    }
 
     res.send({ status: 'OK' });
 });
