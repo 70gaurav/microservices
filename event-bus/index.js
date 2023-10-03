@@ -17,19 +17,19 @@ app.post('/events' , async (req, res) => {
     }
 
     try {
-        await axios.post('http://localhost:4001/events', event);
+        await axios.post('http://comments-srv:4001/events', event);
     } catch (error) {
         console.error("Error sending event to http://localhost:4001/events:", error.message);
     }
 
     try {
-        await axios.post('http://localhost:4002/events', event);
+        await axios.post('http://query-srv:4002/events', event);
     } catch (error) {
         console.error("Error sending event to http://localhost:4002/events:", error.message);
     }
 
     try {
-        await axios.post("http://localhost:4003/events", event);
+        await axios.post("http://moderation-srv:4003/events", event);
     } catch (error) {
         console.error("Error sending event to http://localhost:4003/events:", error.message);
     }
